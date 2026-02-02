@@ -1,1 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DSP Pitch Detection | Arman Hossain Abid</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="image avatar"><img src="images/avatar.png" alt="" /></a> <h1><strong>Arman Hossain Abid</strong></h1>
+				<br>
+                <a href="index.html" class="button small">Back to Home</a>
+			</div>
+		</header>
+
+		<div id="main">
+			<section>
+				<header class="major">
+					<h2>Dsp-pitch-detection-autocorrelation</h2>
+				</header>
+				<div class="row gtr-50 gtr-uniform">
+                    <div class="col-6 col-12-small">
+                        <span class="image fit">
+                            <img src="images/fulls/03.png" alt="Input Signal" />
+                        </span>
+                        <p style="text-align: center; font-size: 0.9em;">Fig 1: Raw Audio Signal</p>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <span class="image fit">
+                            <img src="images/fulls/04.png" alt="Autocorrelation Output" />
+                        </span>
+                        <p style="text-align: center; font-size: 0.9em;">Fig 2: Autocorrelation Peak Detection</p>
+                    </div>
+                </div>
+                <br>
+        <h3>Project Overview</h3>
+				<p>This project implements the <strong>Autocorrelation Function (ACF)</strong> to detect the fundamental frequency (pitch) of audio signals. It is a core concept in Digital Signal Processing (DSP) used in speech recognition and music analysis. The system analyzes time-domain signals to find repeating patterns and calculates the pitch with high accuracy.</p>
+                
+                <h3>Technologies & Algorithms</h3>
+                <ul>
+                    <li><strong>Language:</strong> Python (NumPy, SciPy, Matplotlib).</li>
+                    <li><strong>Algorithm:</strong> Autocorrelation (Time-Domain Analysis).</li>
+                    <li><strong>Input:</strong> .WAV Audio Files.</li>
+                </ul>
+
+				<h3>How it Works</h3>
+				<p>
+                    1. <strong>Pre-processing:</strong> Noise reduction and signal normalization.<br>
+                    2. <strong>Autocorrelation:</strong> Calculating the correlation of the signal with a delayed copy of itself.<br>
+                    3. <strong>Peak Detection:</strong> Identifying the first major peak (lag) to determine the time period (T).<br>
+                    4. <strong>Frequency Calculation:</strong> F = 1/T.
+                </p>
+                <h3>Code Snippet</h3>
+                <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+
+def autocorrelation(x):
+    result = np.correlate(x, x, mode='full')
+    return result[result.size // 2:]
+
+# Calculate Pitch
+def get_pitch(signal, fs):
+    corr = autocorrelation(signal)
+    # Find the first peak after zero lag
+    d = np.diff(corr)
+    start = np.where(d > 0)[0][0]
+    peak = np.argmax(corr[start:]) + start
+    return fs / peak</code></pre>
+
+                <ul class="actions">
+					<li><a href="index.html" class="button">Back to Portfolio</a></li>
+                    <li><a href="https://github.com/armanabid41/dsp-pitch-detection-autocorrelation" class="button primary icon brands fa-github">View Source Code</a></li>
+				</ul>
+			</section>
+		</div>
+
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Arman Hossain Abid</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
