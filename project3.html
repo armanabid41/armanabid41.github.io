@@ -1,1 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Electric Piano (555 Timer) | Arman Hossain Abid</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
+		<header id="header">
+			<div class="inner">
+				<a href="index.html" class="image avatar"><img src="images/avatar.png" alt="" /></a> <h1><strong>Arman Hossain Abid</strong></h1>
+				<br>
+                <a href="index.html" class="button small">Back to Home</a>
+			</div>
+		</header>
+
+		<div id="main">
+			<section>
+				<header class="major">
+					<h2>Electric Piano using 555 Timer IC</h2>
+				</header>
+				<div class="row gtr-50 gtr-uniform">
+                    <div class="col-6 col-12-small">
+                        <span class="image fit">
+                            <img src="images/fulls/06.png" alt="Electric Piano Circuit" />
+                        </span>
+                        <p style="text-align: center; font-size: 0.9em;">Fig 1: Circuit Image</p>
+                    </div>
+                    <div class="col-6 col-12-small">
+                        <span class="image fit">
+                            <img src="images/fulls/05.png" alt="Diagram" />
+                        </span>
+                      <p style="text-align: center; font-size: 0.9em;">Fig 2: Circuit Diagram</p>
+                    </div>
+        </div>
+        
+        <br>
+        
+        <h3>Project Overview</h3>
+        <p>This is a classic electronics mini-project that demonstrates the principles of <strong>frequency modulation</strong> and sound generation. By configuring the <strong>555 Timer IC</strong> in astable multivibrator mode, the circuit produces distinct musical notes suitable for a mini piano.</p>
+        <h3>Components Required</h3>
+        <ul>
+          <li><strong>IC:</strong> NE555 Timer.</li>
+          <li><strong>Output:</strong> 8-ohm Speaker (0.5W).</li>
+          <li><strong>Power:</strong> 9V DC Battery.</li>
+          <li><strong>Control:</strong> 5-8 Push Buttons (Tactile switches).</li>
+          <li><strong>Passive:</strong> Resistors (various values) & Capacitors.</li>
+        </ul>
+        <h3>Circuit Principle</h3>
+        <p>
+          The 555 timer is set up in <strong>Astable Mode</strong>, meaning it generates a continuous square wave pulse. The frequency of this wave determines the "pitch" of the sound.
+          <br><br>
+          
+          <strong>Formula:</strong> <code>f = 1.44 / ((R1 + 2*R2) * C)</code>
+          <br><br>
+          When different buttons are pressed, different resistors are added to the circuit. This changes the value of <strong>R2</strong> in the formula, altering the frequency and creating different musical tones (Do, Re, Mi, etc.).
+        </p>
+        <h3>Key Features</h3>
+        <ul>
+          <li>Low-cost implementation.</li>
+          <li>Practical demonstration of RC charging/discharging cycles.</li>
+          <li>Adjustable tone frequency based on resistor selection.</li>
+        </ul>
+        <ul class="actions">
+					<li><a href="portfolio.html" class="button">Back to Projects</a></li>
+                    </ul>
+			</section>
+		</div>
+
+		<footer id="footer">
+			<div class="inner">
+				<ul class="copyright">
+					<li>&copy; Arman Hossain Abid</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
